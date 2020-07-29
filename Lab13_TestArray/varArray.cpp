@@ -5,7 +5,7 @@ using namespace std;
 void output(double* arrayPtr, int size)
 {
 	for (int i = 0; i < size; i++) {
-		cout << *(arrayPtr + i) << " ";
+		cout << arrayPtr[i] << " ";
 	}
     cout << endl;
 }
@@ -13,7 +13,7 @@ void output(double* arrayPtr, int size)
 int check(double* arrayPtr, double number, int size)
 {
     for (int i = 0; i < size; i++) {
-        if ((*(arrayPtr + i)) == number) {
+        if (arrayPtr[i] == number) {
             return i;
         }
     }
@@ -26,7 +26,7 @@ void addNumber(double*& arrayPtr, double number, int& size)
     if (index == -1) {  
         double* arrayPtr2 = new double[++size];
         for (int i = 0; i < size; i++) {
-            *(arrayPtr2 + i) = *(arrayPtr + i);
+            arrayPtr2[i] = arrayPtr[i];
         }
         *(arrayPtr2 + size - 1) = number;
         delete[] arrayPtr;
@@ -44,7 +44,7 @@ void removeNumber(double*& arrayPtr, double number, int& size)
         //iterate over elements in the old array,
         for (int i = 0; i < size; i++) {
             // if old array element equals to the number to be removed then
-            if ((*(arrayPtr + i)) == number) {
+            if ((arrayPtr[i]) == number) {
                 //     set found to true
                 found = true;
             }
@@ -53,14 +53,14 @@ void removeNumber(double*& arrayPtr, double number, int& size)
                 // if not found then
                 if (!found) {
                     // copy old array element to the new array element
-                    *(arrayPtr2 + i) = *(arrayPtr + i);
+                    arrayPtr2[i] = arrayPtr[i];
                 }
                 // else // found 
                 else {
                     // copy old array element to the new array
                     // element with index one less than old array's 
                     // (move them to the left)
-                    *(arrayPtr2 + i) = *(arrayPtr + i + 1);
+                    arrayPtr2[i] = *(arrayPtr + i + 1);
                 }
             }
         }
