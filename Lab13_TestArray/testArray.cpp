@@ -19,7 +19,7 @@ int main() {
 
     output(a, size); // printing out the array
 
-    /*
+    
     // asking user to input a number
     cout << "Input number to search for: ";
     double number;
@@ -32,7 +32,7 @@ int main() {
     else
        cout << "The number is at position " << index << endl;
 
-    */
+    
     /*
     // adding a new number to array
     addNumber(a, 55.5, size);
