@@ -33,7 +33,7 @@ int main() {
        cout << "The number is at position " << index << endl;
 
     
-    /*
+    
     // adding a new number to array
     addNumber(a, 55.5, size);
     cout << "Array after adding a new number: "; output(a, size);
@@ -49,5 +49,5 @@ int main() {
 
 
     delete [] a; // deallocating the array
-    */
+    
 }
