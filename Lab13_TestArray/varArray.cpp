@@ -48,21 +48,20 @@ void removeNumber(double*& arrayPtr, double number, int& size)
                 //     set found to true
                 found = true;
             }
-            // else
+            // if not found then
+            if (!found) {
+                // copy old array element to the new array element
+                arrayPtr2[i] = arrayPtr[i];
+            }
+            // else // found 
             else {
-                // if not found then
-                if (!found) {
-                    // copy old array element to the new array element
-                    arrayPtr2[i] = arrayPtr[i];
-                }
-                // else // found 
-                else {
-                    // copy old array element to the new array
-                    // element with index one less than old array's 
-                    // (move them to the left)
-                    arrayPtr2[i] = *(arrayPtr + i + 1);
-                }
+                // copy old array element to the new array
+                // element with index one less than old array's 
+                // (move them to the left)
+                arrayPtr2[i] = arrayPtr[i + 1];
             }
         }
+        delete[] arrayPtr;
+        arrayPtr = arrayPtr2;
     }
 }
